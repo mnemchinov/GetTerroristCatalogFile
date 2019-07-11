@@ -4,7 +4,7 @@ Console application for downloading a file with a list of terrorists from http:/
 
 Usage:
 
-gtcf.exe GETFILE /f<Path> /u<Name> /p<Password> /tXML
+gtcf.exe GETFILE /f<<Path>> /u<<Name>> /p<<Password>> /tXML
 
 Parameters:
 
