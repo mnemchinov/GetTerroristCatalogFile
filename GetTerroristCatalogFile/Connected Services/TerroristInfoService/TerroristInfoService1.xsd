@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/FedsfmPortal.Services.TerroristInfo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/FedsfmPortal.Services.TerroristInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://portal.fedsfm.ru/Services/TerroristInfoService/TerroristInfoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="TerroristCatalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdDbf" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IdDoc" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IdNewXml" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IdTerroristCatalog" type="xs:long" />
+      <xs:element minOccurs="0" name="IdXml" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TerroristCatalogDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="TerroristCatalogNumber" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TerroristCatalog" nillable="true" type="tns:TerroristCatalog" />
+  <xs:complexType name="TerroristCatalogPage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:PageBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TerroristCatalogs" nillable="true" type="tns:ArrayOfTerroristCatalog" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TerroristCatalogPage" nillable="true" type="tns:TerroristCatalogPage" />
+  <xs:complexType name="PageBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PageIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="PagesTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="RecordsTotal" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PageBase" nillable="true" type="tns:PageBase" />
+  <xs:complexType name="ArrayOfTerroristCatalog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TerroristCatalog" nillable="true" type="tns:TerroristCatalog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTerroristCatalog" nillable="true" type="tns:ArrayOfTerroristCatalog" />
+  <xs:complexType name="PortalFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileData" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="FileDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileLength" type="xs:int" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdFile" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PortalFile" nillable="true" type="tns:PortalFile" />
+</xs:schema>
