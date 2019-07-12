@@ -2,11 +2,11 @@
 
 Console application for downloading a file with a list of terrorists from http://portal.fedsfm.ru
 
-Usage:
+## Usage:
 
 	gtcf.exe GETFILE /f<Path> /u<Name> /p<Password> /tXML
 
-Parameters:
+## Parameters:
 
 	GETFILE - Download the current file with the list of terrorists
 	/f<Path> - Output file name
