@@ -15,3 +15,4 @@ GETFILE - Download the current file with the list of terrorists
 /p<Password> - Password user personal account fedsfm.ru
 /t<Type> - File type (XML/DBF) 
 ```
+![image](https://repository-images.githubusercontent.com/196380566/729c5b00-a55a-11e9-934c-51cae76f2f2e)
